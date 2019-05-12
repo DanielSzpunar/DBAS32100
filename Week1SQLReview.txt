@@ -176,3 +176,43 @@ LIKE:
 
 SELECT * FROM Customers
 WHERE City LIKE 'a%';
+
+2. Select all records where the value of the City column ends with the letter "a".
+
+SELECT * FROM Customers
+WHERE City LIKE '%a'
+
+3. Select all records where the value of the City column contains the letter "a".
+
+SELECT * FROM Customers
+WHERE City LIKE '%a%';
+
+4. Select all records where the value of the City column starts with a letter "a" and ends with the letter "b".
+
+SELECT * FROM Customers
+WHERE City LIKE 'a%b';
+
+5. Select all records where the value of the City Column does NOT start with the letter "a";
+
+SELECT * FROM Customers
+WHERE City NOT LIKE 'a%';
+
+------------------------------
+WILDCARDS:
+
+1. Select all records where the second letter of the City is an "a".
+
+SELECT * FROM Customers
+WHERE City LIKE '_a%';
+
+2. Select all records where the first letter of the City is an "a"or a "c" or an "s".
+
+SELECT * FROM Customers 
+WHERE City LIKE '[acs]%';
+
+3. Select all records where the first letter of the City starts with anything from an "a" to an "f".
+
+SELECT * FROM Customers
+WHERE City LIKE '[a-f]%';
+
+
