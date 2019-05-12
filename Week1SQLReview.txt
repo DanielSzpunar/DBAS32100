@@ -47,3 +47,132 @@ SELECT * FROM Customers
 WHERE City = 'Berlin'
 AND PostalCode = 12209;
 
+5. Select all records where the City column has the value 'Berlin', and also the records where the City column has the value 'London'.
+
+SELECT * FROM Customers
+WHERE City = 'Berlin'
+OR City = 'London';
+
+------------------------------
+ORDER BY
+
+1. Select all records from the Customers tablee, sort the result alphabetically by the column City.
+
+SELECT * FROM Customers
+ORDER BY City
+
+2. Select all records from the Customers table, sort the result reversed alphabetically by the column City.
+
+SELECT * FROM Customers
+ORDER BY City DESC;
+
+NOTE: natural ORDER BY is in ascending order.
+
+3. Select all records from the Customers table, sort the result alphabetically, first by the column Country, then, by the column City.
+
+SELECT * FROM Customers
+ORDER BY Country, CIty;
+
+--------------------------------
+INSERT:
+
+1. Insert a new record in the Customers table.
+
+INSERT INTO Customers (
+CustomerName,
+Address,
+City,
+PostalCode,
+Country)
+
+VALUES (
+'Daniel Szpunar',
+'771 Hurondal Drive',
+'Mississauga',
+'L5C4N9',
+'Canada');
+);
+
+----------------------
+NULL:
+
+1. Select all records from the Customers where the PostalCode column is empty.
+
+SELECT * FROM Customers
+WHERE PostalCode is NULL;
+
+2. Select all records from the Customers where the PostalCode column is NOT empty
+
+SELECT * FROM Customers
+WHERE PostalCode IS NOT NULL;
+
+
+-------------------------
+UPDATE:
+
+1. Update the City column of **ALL** records in the Customers table.
+
+UPDATE Customers
+SET City = 'Oslo';
+
+2. Set the value of the City columns to 'Oslo', but only the ones where the Country column has the value "Norway".
+
+UPDATE Customers City to Oslo where Country is Norway.
+SET City = 'Oslo'
+WHERE Country = 'Norway';
+
+3. Update the City value and the Country value where customerID = 32
+
+UPDATE Customers
+SET City = 'Oslo',
+Country = 'Norway'
+WHERE CustomerID = 32;
+
+----------------------------
+DELETE:
+
+1. Delete all the records from the Customers table where the Country value is 'Norway'
+
+DELETE FROM Customers
+WHERE Country = 'Norway';
+
+2. Delete all the records from the Customers table **BE CAREFUL**:
+
+DELETE FROM Customers;
+
+------------------------------
+FUNCTIONS:
+
+1. Use the MIN function to select the record with the smallest value of the Price column
+
+SELECT MIN(Price) 
+FROM Products;
+
+2. Use the MAX function to select the record with the smallest value of the Price column
+
+SELECT MAX(Price)
+FROM Products;
+
+3. Use the correct function to return the numbers of records that have the Price value set to 18.
+
+SELECT COUNT(*)
+FROM Products
+WHERE Price = 18;
+
+4. Use an SQL function to calculate the average price of all products.
+
+SELECT AVG(Price)
+FROM Products;
+
+5. Use an SQL function to calculate the sum of all the Price column values in the Products table.
+
+SELECT SUM(Price)
+FROM Products;
+
+------------------------
+LIKE:
+
+1. Select all records where the value of the City column starts with the letter "a"
+
+SELECT * FROM Customers
+WHERE City LIKE 'a%';
