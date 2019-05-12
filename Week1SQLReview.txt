@@ -1,0 +1,49 @@
+REVIEW: 
+7:58 PM 2019-05-11
+
+** NOTE: Ctrl + F7 to reformat code according to Bosses style. **
+
+SELECT:
+
+1. Statement to get all the columns from the Customers table
+
+SELECT * FROM Customers;
+
+2. Statement to select the city column from the Customers table:
+
+SELECT city FROM Customers;
+
+3. Statement to select all the different values from the country column
+in the Customers table:
+
+SELECT DISTINCT Country FROM Customers;
+
+------------------------
+WHERE:
+
+1. Select all records where the City column has the value "Berlin" from the Customer table.
+SELECT * FROM Customers WHERE city = 'Berlin';
+
+SELECT
+    *
+FROM
+    Customers
+WHERE
+    city = 'Berlin';
+
+2. Use the NOT keyword to select all records where City is NOT "Berlin".
+
+SELECT * FROM Customers
+WHERE NOT City = 'Berlin';
+
+3. Select all records where the CustomerID column has the value 32.
+
+SELECT * FROM Customers
+WHERE CustomerID = 32;
+
+4. Select all records where the City column has the value 'Berlin' and the PostalCode column has the value 12209.
+
+SELECT * FROM Customers
+WHERE City = 'Berlin'
+AND PostalCode = 12209;
+
