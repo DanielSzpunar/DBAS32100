@@ -1,0 +1,47 @@
+/*To review some of the SQL statements you have learned in Database
+Design and Implementation and get familiar with HR, SH and SI
+databases, try the following exercises:
+1. Using HR database find out:
+a) How much does Amit Banda earn?
+b) What are the addresses of the company locations in Tokyo?
+c) What is the difference between max_salary and min_salary for the president of
+the company?
+2. Using SH database show:
+ How many promotion categories are there.
+3. Using SI database
+Who are the customers that are interested in buying 2016 Jaguar XE
+*/
+
+/*
+SELECT
+    salary
+   ,first_name
+   ,last_name
+FROM
+    hr.employees
+WHERE
+    last_name = 'Banda'
+    AND first_name = 'Amit';
+*/
+/*
+SELECT
+    street_address
+FROM
+    hr.locations
+WHERE
+    city = 'Tokyo';
+*/
+
+/* Why cant I add more to this? E.g. I want to ', job_title'
+SELECT
+    AVG(max_salary - min_salary) AS average_salary_of_pres
+FROM
+    hr.jobs
+WHERE
+    job_title = 'President';
+*/
+
+/*
+SELECT COUNT(promo_category) AS promotion_catagories
+FROM SH.Promotions;
+*/
