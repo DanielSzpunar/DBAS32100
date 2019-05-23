@@ -1,0 +1,76 @@
+SQL Statements:
+
+SELECT * FROM Customers;
+Customers is the table the statement will use.
+SELECT * FROM customers means select all (*) records from the "Customers" table.
+
+Semicolons are not used in all versions of sql.  However,
+we will use semicolons.
+
+SQL SELECT:
+the select statement is used to select data from a database.
+
+SELECT Address FROM Customers;
+will return all the Address records from Customers.
+
+SELECT CustomerName, City From Customers;
+will return both CustomerName and City from the customer database.
+
+SELECT FieldYouWantToSee FROM TableName;
+SELECT FieldYouWantToSee FROM TableName;
+SELECT FieldYouWantToSee FROM TableName;
+SELECT FieldYouWantToSee FROM TableName;
+SELECT FieldYouWaNtToSee FROM TableName;
+
+SELECT DISTINCT Country FROM Customers;
+
+This will return all different Country entries from the database.
+So, for example, if two customers are from Canada the output
+will only show one Canada. Without DISTINCT the output would show 
+two Canada.
+
+SELECT COUNT (DISTINCT Country) FROM Customers;
+This will return the total amount of distinct (different) countries in the list.
+
+SQL WHERE:
+WHERE is used to filter records. The WHERE clause is used to extract only those records that fulfill a specified condition.
+
+For example,
+SELECT column1, column2 
+FROM table_name
+WHERE condition;
+
+Real world example:
+SELECT * FROM Customers
+WHERE Country = 'MEXICO';
+This will return all data from the database where country matches 
+
+The Following operators can be used in the WHERE clause.
+= Equal
+<> Not Equal
+> greater than
+< less than
+>= greater than or equal to
+<= Less than or equal to
+BETWEEN Between an inclusive range.
+LIKE search for a pattern
+IN To specify multiple possible values for a column.
+
+Where can be combined with AND, OR, and NOT.
+The AND and OR operators are used to filter records based on more than one 
+condition.
+
+AND all conditions must be met.
+OR any of the conditions must be met.
+
+The NOT operator displays a record if the condition(s) is NOT TRUE.
+
+AND SYNTAX
+SELECT * FROM Customers
+WHERE Country = 'Germany' AND City= 'BERLIN'; 
+
+OR SYNTAX
+SELECT * FROM Customers
+WHERE City='Toronto' OR City= 'Mississauga';
+
+

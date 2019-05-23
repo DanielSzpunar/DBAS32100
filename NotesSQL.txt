@@ -1,0 +1,15 @@
+use sheridanusedcars;
+
+select manufacturerID, model from car
+order by manufacturerID;
+
+select m.manufacturer, c.model
+from manufacturer m, car c
+where m.manufacturerID = c.manufacturerID;
+
+/*Books = BookID Branch=Branch_ID library BookID and BranchID
+INNER JOIN, OUTER JOIN, JOIN,
+
+SELECT Student.studentId
+method add row update row for assignment modularize the assignment.
+*/

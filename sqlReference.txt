@@ -1,0 +1,84 @@
+SQL FUNCTIONS:
+
+MATHEMATICAL FUNCTIONS:
+
+1.
+ROUND()
+-----------
+returns a number rounded to a certain number of decimal places.
+ROUND(number, decimal_places)
+
+Ex.
+SELECT ROUND(345.156, 0);
+will return 345 since it it now rounded to 0 decimal places.
+
+
+SELECT ROUND(345.156, 1)
+will return 345.2 since 345.156 rounded to 1 decimal place would be 345.15 rounded up equals 345.2.
+
+USE HR
+GO
+
+SELECT ROUND(Min_Salary, -3) FROM Jobs
+
+SELECT Min_Salary FROM Jobs
+WHERE ROUND(Min_Salary, -3) = 3000
+
+2.
+CEILING()
+--------------
+returns the smallest ***INTEGER*** value that is greater than or
+equal to a number. (Bascially rounds up no matter how insignificant the decimal above the integer is.)
+
+SELECT CEILING(25.0000000000001);
+will return 26
+
+SELECT CEILING(25.0000000000000);
+will return 25
+
+SELECT CEILING(25.9999999);
+will return 26
+
+3.
+FLOOR()
+-------------
+FLOOR() returns the largest INTEGER value that is less than or equal to a number. (Basically rounds down no matter how insignificant the decimal above the integer is.)
+
+FLOOR(25.9999999999999999999999999999999999)
+will return 25
+
+FLOOR(25.0000001)
+will return 25
+
+STRING FUNCTIONS:
+
+1.
+CONCAT()
+----------
+CONCAT() will concatenate several expressions together
+
+SELECT CONCAT('sql ', ' is', 'fun') AS ConcatenatedString;
+
+2.
+REPLACE()
+-----------
+REPLACE() will replace all occurences of a specific string.
+It is case-sensative.
+
+SELECT REPLACE('SQL Tutorial', 'SQL', 'HTML');
+will return HTML Tutorial
+since we are replacing the SQL with the html
+*First argument case sensitive word to replace. 
+Second argument string to be replaced 
+Third argument string to replace second argument
+
+
+ORDERS:
+
+
+DISTINCT:
+
+
+AGGREGATE:
+
+

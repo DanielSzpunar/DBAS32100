@@ -1,0 +1,38 @@
+s2u6
+Sher1dan
+dbr.fast.sheridanc.on.ca
+login.
+
+
+Data Source=dbr.fast.sheridanc.on.ca;Initial Catalog=AdventureWorks2012
+
+
+
+
+Projection:
+rename
+restriction using where
+conditoinal expresssions boolean algebra
+IN
+BETWEEN
+LIKE 'Herman' _ % Like allows for more flexibility
+when looking for similiar names just ype a few letters followed by % symbol.
+ORDER BY
+SELECT DISTINCT
+AGGREGATE FUNCTIONS
+GROUP BY (with aggregate functions)
+in class exercises should be reviewed
+Must learn subqueries
+
+
+use IN for the salary > 1200 question
+joining tables, 
+left outter join returns all from left and leave the right field empty
+right outter join returns all from right and leave the left empty if they do not have a match.
+
+
+
+
+USE HR
+GO
+Select FirstName FROM EMPLOYESS;

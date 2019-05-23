@@ -1,0 +1,156 @@
+Select all records where the city column is NOT the value of 'Berlin'
+
+SELECT * FROM Customers
+WHERE City <> 'Berlin'
+
+
+Select all records where City column has the value 'Berlin' and also
+the records where the City column has the value of 'London'
+
+SELECT * FROM Customers
+WHERE City = 'Berlin'
+Or City = 'London';
+
+
+Select all records from the Customers table, sort the result alphabetically by the column
+City
+
+SELECT * FROM Customers
+ORDER BY City;
+
+Same as above but sort the result reversed alphabetically [ie c b a]
+SELECT * FROM CUSTOMERS
+ORDER BY City DESC
+
+
+Use the COUNT function to count the number of records that have the Price value set to 18.
+
+SELECT 
+COUNT (Price
+
+FROM Products
+WHERE Price = 18;
+
+
+Use an SQL function to calculate the average price of all products.
+
+SELECT 
+AVG(PRICE)
+
+FROM Products;
+
+
+Select all records where the value of the City column starts with the letter "a".
+
+SELECT * FROM Customers
+WHERE City LIKE 'a%';
+
+
+Select all records where the value of the City column ends with the letter "a".
+
+SELECT * FROM Customers
+WHERE City LIKE '%a';
+
+
+Select all records where the value of the City column contains the letter "a".
+
+SELECT * FROM Customers
+WHERE City LIKE '%a%';
+
+
+Select all records where the second letter of the City is an "a".
+
+SELECT * FROM Customers
+WHERE City LIKE '_a%';
+
+
+
+Select all records where the first letter of the City is an "a" or a "b" or a "c".
+SELECT * FROM Customers
+WHERE City LIKE '
+[abc]%';
+
+
+Select all records where the first letter of the City starts with anything from an "a" to an "f".
+
+SELECT * FROM Customers
+WHERE City LIKE '
+[a-f]
+%';
+
+
+Select all records where the first letter of the City is NOT an "a" or a "b" or a "c".
+
+SELECT * FROM Customers
+WHERE City LIKE '
+[!abc]
+%';
+
+
+
+Use the IN operator to select all the records where Country is either "Norway" or "France".
+
+SELECT * FROM Customers
+WHERE Country IN
+('Norway','France');
+
+
+Use the IN operator to select all the records where Country is NOT "Norway" and NOT "France".
+
+SELECT * FROM Customers
+WHERE Country NOT IN
+('Norway', 'France');
+
+
+Use the BETWEEN operator to select all the records where the value of the Price column is between 10 and 20.
+
+
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+
+
+Use the BETWEEN operator to select all the records where the value of the ProductName column is alphabetically between 'Geitost' and 'Pavlova'.
+
+
+SELECT * FROM Products
+WHERE ProductName 
+BETWEEN 'Geitost' AND 'Pavlova'
+
+
+When displaying the Customers table, make an ALIAS of the PostalCode column, the column should be called Pno instead.
+
+
+SELECT CustomerName,
+Address,
+PostalCode 
+AS Pno
+
+Insert the missing parts in the JOIN clause to join the two tables Orders and Customers, using the CustomerID field in both tables as the relationship between the two tables.
+
+
+SELECT *
+FROM Orders
+LEFT JOIN Customers
+ON Orders.CustomerID=Customers.CustomerID;
+
+
+
+List the number of customers in each country, ordered by the country with the most customers first.
+
+
+SELECT 
+COUNT
+(CustomerID),
+Country
+FROM Customers
+GROUP BY Country
+ORDER BY 
+COUNT(CustomerID) DESC;
+
+
+
+
+
+
+
+

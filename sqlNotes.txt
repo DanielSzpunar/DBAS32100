@@ -1,0 +1,10 @@
+ctrl + f7 to make code pretty.
+to auto format
+hr
+sh 
+si 
+h11 
+
+
+SELECT statement is a table.
+dual is a reserved word 
