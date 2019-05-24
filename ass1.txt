@@ -1,0 +1,49 @@
+NUMBER 1:
+SELECT
+   SUM(s.partscost + s.laborcost) AS "Sum of parts and labor"
+   ,ROUND(AVG(s.partscost + s.laborcost),2) AS "Average value of visit"
+   ,Count(*) AS "Num of visits"
+FROM
+    si.car c
+    INNER JOIN si.servinv s
+    ON c.carserial = s.carserial
+WHERE
+    carmake IN (
+        upper('mercedes')
+       ,upper('acura')
+       ,upper('jaguar')
+    )
+    AND servdate BETWEEN '01-MAY-17' AND '31-AUG-17';
+
+
+NUMBER 2:
+SELECT DISTINCT
+    custname   AS "Jaguar Customers"
+   ,CASE
+        WHEN COUNT(carmake) = 1
+             AND carmake = upper('jaguar') THEN 'one-time buyer'
+        WHEN COUNT(carmake) = 2
+             AND carmake = upper('jaguar') THEN 'two-time buyer'
+        WHEN COUNT(carmake) >= 3
+             AND carmake = upper('jaguar') THEN 'frequent buyer'
+    END AS "type of customer"
+FROM
+    si.car
+WHERE
+    carmake = upper('jaguar')
+GROUP BY
+    carmake
+   ,custname;
+
+NUMBER 3:
+
+SELECT custname
+from si.car
+where carmodel IN (SELECT carmodel FROM si.car)
+INTERSECT 
+SELECT custname 
+FROM si.prospect
+WHERE carmodel IN (SELECT carmodel FROM si.prospect)
+
+number 4: 
+
