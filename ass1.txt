@@ -47,3 +47,8 @@ WHERE carmodel IN (SELECT carmodel FROM si.prospect)
 
 number 4: 
 
+select * from si.car;
+select carmodel AS "Toyota Model",ROUND(SUM(purchcost),2) AS "Total Sum"
+FROM si.car
+WHERE carmake = UPPER('toyota') AND purchcost IS NOT NULL
+GROUP BY ROLLUP(carmodel);
