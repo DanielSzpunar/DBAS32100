@@ -52,3 +52,20 @@ select carmodel AS "Toyota Model",ROUND(SUM(purchcost),2) AS "Total Sum"
 FROM si.car
 WHERE carmake = UPPER('toyota') AND purchcost IS NOT NULL
 GROUP BY ROLLUP(carmodel);
+
+SELECT
+     carmake    AS "Make"
+    ,carmodel   AS "Model"
+    ,ROUND(SUM(partscost + laborcost),2) AS "Total Services"
+ FROM
+     si.car c
+     INNER JOIN si.servinv s
+     ON c.carserial = s.carserial
+ WHERE
+     carmake = upper('toyota')
+     OR ( carmake = upper('toyota')
+          AND carmodel IS NOT NULL )
+ GROUP BY
+     ROLLUP(carmake
+    ,carmodel)
+ ORDER BY "Total Services"
