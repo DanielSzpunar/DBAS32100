@@ -69,3 +69,38 @@ SELECT
      ROLLUP(carmake
     ,carmodel)
  ORDER BY "Total Services"
+
+#5.
+SELECT c.carserial
+    ,carmodel
+    ,carsaleprice
+    ,sum(carsaleprice) OVER(
+        partition by carmodel
+        ORDER BY carmodel DESC
+    ) AS cost_sum
+    FROM si.saleinv s
+    INNER JOIN si.car c
+    ON c.carserial = s.carserial
+    WHERE c.carmake = 'JAGUAR';
+
+
+
+
+/*5. 
+Write a query using analytic functions that will show the serial number, the price of each JAGUAR 
+car as well as the cumulative price totals.
+*/
+SELECT c.carserial
+    ,carmodel
+    ,carsaleprice
+    ,sum(carsaleprice) OVER(
+        partition by carmodel
+        ORDER BY carmodel DESC
+    ) AS cost_sum
+    FROM si.saleinv s
+    INNER JOIN si.car c
+    ON c.carserial = s.carserial
+    WHERE c.carmake = 'JAGUAR';
+
+
+
