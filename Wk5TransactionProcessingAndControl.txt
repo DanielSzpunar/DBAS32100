@@ -1,0 +1,122 @@
+Database Transactions:
+A transaction has four properties:
+ACID
+Atomicity
+Consistency
+Isolation
+Durabilty
+
+What is a transaction?
+A transaction comprises a unit of database work.
+
+They take the  database from one consistent state to the next
+consistent state.
+	A Database transaction implicitly begins with the first
+statement that modifies data.
+	COMMIT or ROLLBACK statement explicitly ends a transaction.
+
+Issuing a commit ensures that all of your changes have been 
+successfully saved  and that all data integrity checks and rules
+have been validated.
+
+TRANSACTION CONTROL STATEMENTS:
+
+	COMMIT or COMMIT WORK
+		end your transaction and makes any changes permanent
+
+	ROLLBACK or ROLLBACK WORK
+		ends your transaction and undoes any 		uncommitted changes
+	
+	ROLLBACK <SAVEPOINT>
+		Rolls back the transaction to the marked point
+		without rolling back any of the work that
+		preceeded it.
+	
+	SET TRANSACTION
+		Allows you to set various transactions attributes
+		such as the transactions isolation level and whether
+		it is read only or read write
+
+Transactions Properties
+	Atomicity
+		Either all of a transaction happens or none of it 		happens.
+	Consistency
+		A transaction takes the database from one consistent
+		state to the next.
+	Isolation
+		The effects of a transaction may not be visible to 
+		other transactions until the transaction has 		commited.
+	Durability
+		Once the transaction is commited, its permanent.
+
+LOCKS:
+Whenever an INSERT UPDATE or DELETE statement is issued the data
+is not immediately sent to the table but, rather, is temporarily 
+stored in the users buffer.
+
+When the user isssues a SELECT statement to view the data, data from the table is combined with the data from the buffer before presenting
+it to the user and the user thinks that the data has been inserted.
+
+Other users do not see the above changes Locks prevent users from
+destroying each othes data when theya are simutaneloysly making changes
+and so are very different.
+
+TWO STATEMENTS RELEASE LOCKS:  ROLLBACK & COMMIT 
+
+
+
+
+LOCKS:
+	Locks are aquired when any process accesses a peice of data
+where there is a chance that another concurrent process will need
+this peice of data as well at the same time. By locking the peice of 
+data we ensure that we are able to action on that data the way we
+expect.
+
+	Blocks occur when 2 processes need access to same peice 
+of data concurrently so one process locks the data and the other one
+needs to wait for the other one to complete and release the lock.
+As soon as the first process is complete, the blocked process resumes
+operation. The blocking chain is like a queue. Once the blocking 
+process is complete the next process can continue.
+
+	Deadlock occurs when one process is blocked and waiting for 
+a second process to complete its work and release locks while
+the second process at the same time is blocked and waiting for the
+first process to release the locks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
